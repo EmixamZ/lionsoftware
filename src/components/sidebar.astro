@@ -1,0 +1,35 @@
+---
+import logo from '../../src/assets/logo.png';
+import Image from 'astro/components/Image.astro';
+import Linkedin from './linkedin.astro';
+const currentPath = Astro.url.pathname;
+---
+<aside>
+    <ul class="w-full md:w-[200px] p-8 font-medium items-center md:pt-20 flex flex-row md:flex-col gap-6 md:px-8 h-full">
+        <li class="w-16 md:w-full ">
+            <a href="/lionsoftware/">
+                <Image src={logo} alt={'Main logo'} class="w-full object-cover"/>
+            </a>
+        </li>
+        <li>
+            <a class={currentPath ==='/lionsoftware/' ? 'active' : ''} href="/lionsoftware/">Home</a>
+        </li>
+        <li>
+            <a class={currentPath ==='/lionsoftware/about/' ? 'active' : ''} href="/lionsoftware/about/">About</a>
+        </li>
+        <li >
+            <a href="https://www.linkedin.com/in/maxime-zanos-2a6b4212a/">
+                <Linkedin />
+            </a>
+        </li>
+        <li>
+            
+        </li>
+    </ul>
+</aside>
+
+<style>
+    .active{
+        @apply rounded p-2 bg-lion hover:bg-lionBg transition-colors ease-in-out delay-75 text-white;
+    }
+</style>
